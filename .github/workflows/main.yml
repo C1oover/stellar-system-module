@@ -11,11 +11,24 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Build and attach module.zip + module.json
-        uses: rayners/foundry-module-actions/release@v5
+      - name: Create module zip
+        run: |
+          mkdir -p build
+          zip -r build/module.zip module.json scripts styles templates lang README.md
+
+      - name: Upload module.json
+        uses: softprops/action-gh-release@v2
         with:
-          module-files: 'module.json scripts/ styles/ templates/ lang/ assets/'
+          files: module.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload module.zip
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/module.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
