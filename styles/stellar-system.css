@@ -1,0 +1,142 @@
+.stellar-system-module .window-content,
+.solar-system-editor .window-content {
+  padding: 0.75rem;
+}
+
+.solar-system-editor__form {
+  gap: 0.75rem;
+}
+
+.solar-system-editor__hero,
+.solar-system-editor__panel,
+.stellar-system-module-hud {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  background: rgba(12, 18, 32, 0.88);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.solar-system-editor__hero {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0.9rem;
+}
+
+.solar-system-editor__hero h2,
+.solar-system-editor__panel h3,
+.solar-system-editor__panel h4 {
+  margin: 0;
+}
+
+.solar-system-editor__hero p {
+  margin: 0.35rem 0 0;
+  color: var(--color-text-light-6);
+}
+
+.solar-system-editor__hero-actions,
+.solar-system-editor__tiny-actions,
+.stellar-system-module-hud__actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.solar-system-editor__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.solar-system-editor__panel {
+  padding: 0.85rem;
+}
+
+.solar-system-editor__panel--details,
+.solar-system-editor__panel--bodies {
+  min-height: 200px;
+}
+
+.solar-system-editor__panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.65rem;
+}
+
+.solar-system-editor__body-list {
+  display: grid;
+  gap: 0.35rem;
+  max-height: 260px;
+  overflow: auto;
+}
+
+.solar-system-editor__body-btn {
+  text-align: left;
+  padding: 0.45rem 0.55rem;
+  border-radius: 8px;
+}
+
+.solar-system-editor__body-btn.is-selected {
+  outline: 2px solid var(--color-warm-1);
+}
+
+.solar-system-editor__detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.solar-system-editor__wide {
+  grid-column: 1 / -1;
+}
+
+.solar-system-editor__subsection {
+  margin-top: 0.9rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.solar-system-editor label {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.solar-system-editor__checkbox {
+  display: flex !important;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.solar-system-editor textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.stellar-system-module-hud {
+  position: fixed;
+  top: 72px;
+  left: 24px;
+  z-index: 90;
+  display: none;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.75rem 0.9rem;
+  color: white;
+}
+
+.stellar-system-module-hud__trail {
+  font-weight: 600;
+}
+
+.stellar-system-module-info code {
+  user-select: all;
+}
+
+@media (max-width: 900px) {
+  .solar-system-editor__grid,
+  .solar-system-editor__detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
