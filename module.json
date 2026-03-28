@@ -1,29 +1,36 @@
 {
-	"id": "stellar-system-module",
-	"title": "Stellar System Module",
-	"description": "Animated solar-system scene overlay for Foundry VTT with GM editor, binary stars, planetary orbits, moons, dual planets, and nested player drill-down views.",
-	"version": "0.1.0",
-	"authors": [
-		{
-			"name": "OpenAI"
-		}
-	],
-	"compatibility": {
-		"minimum": "13",
-		"verified": "13.350"
-	},
-	"relationships": {
-		"systems": []
-	},
-	"esmodules": ["scripts/main.js"],
-	"styles": ["styles/stellar-system.css"],
-	"languages": [
-		{
-			"lang": "en",
-			"name": "English",
-			"path": "lang/en.json"
-		}
-	],
-	"license": "AGPL3",
-	"readme": "README.md"
+  "id": "stellar-system-module",
+  "title": "Stellar System Module",
+  "description": "Animated solar-system scene overlay for Foundry VTT with GM editor, binary stars, planetary orbits, moons, dual planets, and nested player drill-down views.",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "C1oover"
+    }
+  ],
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13.350"
+  },
+  "relationships": {
+    "systems": []
+  },
+  "esmodules": [
+    "scripts/main.js"
+  ],
+  "styles": [
+    "styles/stellar-system.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "license": "AGPL",
+  "readme": "README.md",
+  "url": "https://github.com/C1oover/stellar-system-module",
+  "manifest": "https://github.com/C1oover/stellar-system-module/releases/latest/download/module.json",
+  "download": "https://github.com/C1oover/stellar-system-module/releases/latest/download/module.zip"
 }
