@@ -1,0 +1,21 @@
+name: Release Module
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build and attach module.zip + module.json
+        uses: rayners/foundry-module-actions/release@v5
+        with:
+          module-files: 'module.json scripts/ styles/ templates/ lang/ assets/'
