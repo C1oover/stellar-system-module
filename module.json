@@ -12,15 +12,11 @@
 		"minimum": "13",
 		"verified": "13.350"
 	},
-  	"esmodules": [
-    	"scripts/main.js"
-  	],
-	"styles": [
-    	"styles/solar-system.css"
-  	],
+	"esmodules": ["scripts/main.js"],
+	"styles": ["styles/solar-system.css"],
 	"relationships": {
-    	"systems": []
-  	},
+		"systems": []
+	},
 	"license": "AGPL",
 	"readme": "README.md",
 	"url": "https://github.com/C1oover/stellar-system-module",
