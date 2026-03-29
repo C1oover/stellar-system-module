@@ -1,6 +1,11 @@
 .stellar-system-module .window-content,
 .solar-system-editor .window-content {
   padding: 0.75rem;
+  overflow-y: auto;
+}
+
+.solar-system-editor form {
+  min-width: 0;
 }
 
 .solar-system-editor__form {
@@ -12,7 +17,7 @@
 .stellar-system-module-hud {
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 12px;
-  background: rgba(12, 18, 32, 0.88);
+  background: rgba(12, 18, 32, 0.92);
   backdrop-filter: blur(10px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
 }
@@ -42,19 +47,27 @@
   flex-wrap: wrap;
 }
 
+.solar-system-editor__hero-actions button,
+.solar-system-editor__tiny-actions button,
+.stellar-system-module-config-open,
+.stellar-system-module-launcher {
+  white-space: nowrap;
+}
+
 .solar-system-editor__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 0.75rem;
 }
 
 .solar-system-editor__panel {
   padding: 0.85rem;
+  min-width: 0;
 }
 
 .solar-system-editor__panel--details,
 .solar-system-editor__panel--bodies {
-  min-height: 200px;
+  min-height: 220px;
 }
 
 .solar-system-editor__panel-header {
@@ -63,6 +76,10 @@
   justify-content: space-between;
   gap: 0.75rem;
   margin-bottom: 0.65rem;
+}
+
+.solar-system-editor__panel-header > * {
+  min-width: 0;
 }
 
 .solar-system-editor__body-list {
@@ -101,6 +118,20 @@
 .solar-system-editor label {
   display: grid;
   gap: 0.3rem;
+  min-width: 0;
+}
+
+.solar-system-editor input,
+.solar-system-editor select,
+.solar-system-editor textarea,
+.solar-system-editor button {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.solar-system-editor input[type="checkbox"] {
+  width: auto;
 }
 
 .solar-system-editor__checkbox {
@@ -110,14 +141,14 @@
 }
 
 .solar-system-editor textarea {
-  min-height: 80px;
+  min-height: 90px;
   resize: vertical;
 }
 
 .stellar-system-module-hud {
   position: fixed;
   top: 72px;
-  left: 24px;
+  left: 72px;
   z-index: 90;
   display: none;
   align-items: center;
@@ -130,11 +161,23 @@
   font-weight: 600;
 }
 
+.stellar-system-module-launcher {
+  position: fixed;
+  top: 90px;
+  left: 16px;
+  z-index: 95;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: 10px;
+}
+
 .stellar-system-module-info code {
   user-select: all;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .solar-system-editor__grid,
   .solar-system-editor__detail-grid {
     grid-template-columns: 1fr;
