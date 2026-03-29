@@ -31,16 +31,21 @@ Hooks.once("init", async () => {
 
 Hooks.on("getSceneControlButtons", (controls) => {
   if (!game.user?.isGM) return;
-  const bucket = controls.find((c) => c.name === "tiles") ?? controls[0];
+
+  const bucket = controls.tiles ?? controls.token ?? Object.values(controls)[0];
   if (!bucket) return;
-  bucket.tools.push({
-    name: `${MODULE_ID}-open-editor`,
+  if (!bucket.tools) bucket.tools = {};
+
+  const toolName = `${MODULE_ID}-open-editor`;
+  bucket.tools[toolName] = {
+    name: toolName,
     title: "Solar System Editor",
-    icon: "fa-solid fa-star-shooting",
+    icon: "fa-solid fa-star",
     button: true,
     visible: true,
-    onClick: () => SolarSystemEditor.openForScene(canvas?.scene)
-  });
+    order: Object.keys(bucket.tools).length,
+    onChange: () => SolarSystemEditor.openForScene(canvas?.scene)
+  };
 });
 
 Hooks.on("canvasReady", () => refreshOverlay());
