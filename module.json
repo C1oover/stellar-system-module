@@ -2,7 +2,7 @@
 	"id": "stellar-system-module",
 	"title": "Stellar System Module",
 	"description": "Animated solar-system scene overlay for Foundry VTT with GM editor, binary stars, planetary orbits, moons, dual planets, and nested player drill-down views.",
-	"version": "0.1.2",
+	"version": "0.1.4",
 	"authors": [
 		{
 			"name": "C1oover"
@@ -12,18 +12,15 @@
 		"minimum": "13",
 		"verified": "13.350"
 	},
+  	"esmodules": [
+    	"scripts/main.js"
+  	],
+	"styles": [
+    	"styles/solar-system.css"
+  	],
 	"relationships": {
-		"systems": []
-	},
-	"esmodules": ["scripts/main.js"],
-	"styles": ["styles/stellar-system.css"],
-	"languages": [
-		{
-			"lang": "en",
-			"name": "English",
-			"path": "lang/en.json"
-		}
-	],
+    	"systems": []
+  	},
 	"license": "AGPL",
 	"readme": "README.md",
 	"url": "https://github.com/C1oover/stellar-system-module",

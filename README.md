@@ -1,42 +1,38 @@
-# Stellar System Module
+# Generic Solar System
 
-First-pass Foundry VTT module scaffold for an Augur-style animated solar system scene.
+Prototype FoundryVTT module scaffold for a scene-level solar system renderer.
 
-## Implemented in this pass
+## Included in this first pass
 
-- Scene-backed solar system data stored on scene flags
-- Animated root system view
-- Single-star and binary-star autopopulate presets
-- Adjustable stars (color, size, glow)
-- Binary stars orbiting around a barycenter
-- Planets orbiting a star or a binary barycenter
-- Figure-eight orbit mode for test bodies around a binary center
-- Moon support via parent/child relationships
-- Dual-planet support via shared pair IDs
-- GM-only editor window with context-aware body fields
-- Canvas click-to-select for GMs while the editor is open
-- Player drill-down views: system -> planet -> moon
-- Info popup for focused bodies
+- Scene-stored solar system configuration in module flags
+- Shader-driven stellar glow for suns
+- Single-star or binary-star systems
+- Autopopulated generation dialog for stars, planets, moons, and twin-planet pairs
+- Kepler-style orbits based on mass and distance for single-primary and binary-pair cases
+- Circumbinary support and a figure-8 preview mode for bodies traveling between two suns
+- GM-side floating editor with context-sensitive body controls
+- Player-facing nested zoom flow with info popups
+- Local-client zoom state, so each player can inspect bodies independently
 
-## Not implemented yet
+## Current limitations
 
-- Texture maps / material layers for planets
-- Journals linked directly by picker UI
-- Dedicated local map scene hand-off
-- Persistence of per-user nested view state across reloads
-- A custom Foundry document type for bodies
-- Route network / warp highways between star systems
+- Figure-8 motion is a stylized deterministic path, not a full three-body numerical solver
+- Surface textures, atmospheric layers, rings, asteroid belts, and journal integration are not implemented yet
+- The editor is functional but still prototype-level; deeper validation and drag handles are not included yet
+- No server-authoritative sync loop is needed yet because the animation is deterministic from shared config and local time
 
-## Installation
+## Install for local testing
 
-1. Copy the `stellar-system-module` folder into `Data/modules/`.
-2. Enable the module in Foundry.
+1. Copy this folder into your Foundry user data `Data/modules/` directory.
+2. Enable **Generic Solar System** in your world.
 3. Open a scene.
-4. Use the new **Solar System Editor** scene-control button.
-5. Click an autopopulate button, then refine bodies in the editor.
+4. Click the new globe tool in Scene Controls to open the GM editor.
+5. Use **Create** or **Autopopulate**.
 
-## Notes
+## Suggested next steps
 
-- This scaffold intentionally uses simple circles and shader-backed PIXI filters rather than textures.
-- The module treats each Foundry scene as one star-system canvas for this first phase.
-- The next logical step is linking bodies to JournalEntry pages and local map scenes.
+1. Replace the figure-8 preview path with a restricted three-body integrator.
+2. Add drag-to-reposition orbit anchors and live handles on the canvas.
+3. Split the UI into a creation wizard and a richer editor app.
+4. Add journal generation, notes, textures, and per-body detail pages.
+5. Add scene-region masking and optional space skyboxes.
